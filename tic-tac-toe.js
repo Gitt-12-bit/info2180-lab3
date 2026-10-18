@@ -37,6 +37,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
     })
+    document.querySelector('.btn').addEventListener('click', function()
+    {
+        turn = 0;
+        state.fill(null);
+        document.querySelectorAll('#board div').forEach(function(cell){
+            cell.textContent = '';
+            cell.classList.remove('X');
+            cell.classList.remove('O');
+        })
+        let status = document.querySelector('#status')
+        status.textContent = 'Move your mouse over a square and click to play an X or an O.';
+        status.classList.remove('you-won');
+    })
 });
 
 function winner_check(state, wCombinations)
